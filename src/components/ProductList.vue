@@ -5,7 +5,7 @@
     <ul v-else>
       <li v-for="product in products">
         {{product.title}} - {{product.price | currency}} --> {{product.inventory}}
-        <button :disabled="!productInStock(product)" @click="addProduct(product)">Add to cart</button>
+        <button :disabled="!productInStock(product)" @click="addProductToCart(product)">Add to cart</button>
       </li>
     </ul>
 
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import {mapState, mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'ProductList',
@@ -22,28 +23,44 @@ export default {
       loading: false
     };
   },
-  computed: {
-    products() {
-      return this.$store.state.products
-      // return this.$store.getters.availableProducts
-    },
-    productInStock() {
-      return this.$store.getters.productInStock
-    }
+
+  computed : {
+    ...mapState({
+      products: state => state.products
+    }),
+    ...mapGetters({
+      productInStock: 'productInStock'
+    })
   },
+  // computed: {
+  //   products() {
+  //     return this.$store.state.products
+  //     // return this.$store.getters.availableProducts
+  //   },
+  //   productInStock() {
+  //     return this.$store.getters.productInStock
+  //   }
+  // },
   created() {
     // shop.getProducts(products => {
     //   // this.products = products;
     //   store.commit('setProducts',products)
     // });
     this.loading = true
-      this.$store.dispatch('fetchProducts')
+    // this.$store.dispatch('fetchProducts')
+    this.fetchProducts()
       .then(() => this.loading = false)
   },
   methods : {
-    addProduct(product) {
-      this.$store.dispatch('addProductToCart',product)
-    }
+    ...mapActions({
+      fetchProducts: 'fetchProducts',
+      addProductToCart: 'addProductToCart'
+
+    }),
+
+    // addProductToCart(product) {
+    //   this.$store.dispatch('addProductToCart',product)
+    // }
   }
 }
 </script>
