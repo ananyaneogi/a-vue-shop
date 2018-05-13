@@ -1,31 +1,23 @@
 <template>
   <div id="app">
-    <ProductList/>
-    <hr>
-    <ShoppingCart/>
+    <TopNavigation/>
+    <div class="content-wrapper">
+      <router-view/>
+    </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import ProductList from '@/components/ProductList'
-import ShoppingCart from '@/components/ShoppingCart'
+import TopNavigation from '@/components/TopNavigation'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
-    ProductList,
-    ShoppingCart
+    Footer,
+    TopNavigation
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style> @import './assets/styles.css'; </style>

@@ -1,0 +1,294 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+#app {
+  font-family: 'Georgia', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #131313;
+}
+
+/* Reset `button` and button-style `input` default styles */
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button {
+  padding: 10px 30px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 1000px;
+  cursor: pointer;
+  background: white;
+  color: #5044ff;
+  border: 1px solid #5044ff;
+  text-transform: uppercase;
+  margin: 10px;
+  -webkit-transition: 0.15s all ease-out;
+  transition: 0.15s all ease-out;
+}
+
+button:hover {
+  background: #5044ff;
+  color: white;
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+input[type='email'] {
+  line-height: 24px;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  height: 24px;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder {
+  color: #aab8c3;
+}
+
+input::placeholder,
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder {
+  color: #aab8c3;
+}
+
+/* ---- items layout ---- */
+
+.content-wrapper {
+  padding: 60px 0px;
+  min-height: 83vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.product-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sidebar-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 40px;
+  border-right: 1px solid #eee;
+}
+.product-list-wrap {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  padding-left: 40px;
+}
+
+.product-list ul {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  padding: 0;
+  grid-gap: 10px;
+}
+
+.product-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+
+.product-card img {
+  max-height: 280px;
+}
+
+/* no grid support */
+
+@supports (display: grid) {
+  .capsule > * {
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* --- range --- */
+
+input[type='range'].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 25px 0 5px;
+}
+
+input[type='range'].slider:focus {
+  outline: none;
+}
+
+input[type='range'].slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4.3px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #5044ff;
+  border-radius: 13.7px;
+  border: 0px solid rgba(1, 1, 1, 0);
+}
+
+input[type='range'].slider::-webkit-slider-thumb {
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+          box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+  border: 1.9px solid #3e63ea;
+  height: 17px;
+  width: 17px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.35px;
+}
+
+input[type='range'].slider:focus::-webkit-slider-runnable-track {
+  background: #5576ed;
+}
+
+input[type='range'].slider::-moz-range-track {
+  width: 100%;
+  height: 4.3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #5044ff;
+  border-radius: 13.7px;
+  border: 0px solid rgba(1, 1, 1, 0);
+}
+
+input[type='range'].slider::-moz-range-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+  border: 1.9px solid #3e63ea;
+  height: 17px;
+  width: 17px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type='range'].slider::-ms-track {
+  width: 100%;
+  height: 4.3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type='range'].slider::-ms-fill-lower {
+  background: #2752e7;
+  border: 0px solid rgba(1, 1, 1, 0);
+  border-radius: 27.4px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+input[type='range'].slider::-ms-fill-upper {
+  background: #5044ff;
+  border: 0px solid rgba(1, 1, 1, 0);
+  border-radius: 27.4px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+input[type='range'].slider::-ms-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+  border: 1.9px solid #3e63ea;
+  height: 17px;
+  width: 17px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 4.3px;
+}
+
+input[type='range'].slider:focus::-ms-fill-lower {
+  background: #5044ff;
+}
+
+input[type='range'].slider:focus::-ms-fill-upper {
+  background: #5576ed;
+}
+
+/* ---- media queries ---- */
+
+/* check out how little code this is I love you gridddddddddddd ❤️ */
+
+@media (max-width: 600px) {
+  aside {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .content {
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  nav li {
+    padding: 0 10px !important;
+  }
+
+  nav .capsule {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
