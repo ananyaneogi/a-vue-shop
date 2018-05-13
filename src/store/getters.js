@@ -10,6 +10,7 @@ export default { // = computed properties
       return {
         title: product.title,
         price: product.price,
+        img: product.img,
         quantity: cartItem.quantity
       }
     })

@@ -6,17 +6,24 @@
         <button>Shop Now!</button>
       </router-link>
     </div>
-    <div v-else>
+    <div v-else class="shopping-cart-items">
       <ul>
-        <li v-for="product in products">{{product.title}} - {{product.price | currency}} --> {{product.quantity}}</li>
+        <li v-for="product in products" class="cart-product-card">
+          <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price"> {{product.price | currency}}</span>
+          <span class="product-cart-quantity">Quantity: {{product.quantity}}</span>
+        </li>
       </ul>
-      <h2>Cart total : </h2>
-      <p>{{ total | currency}}</p>
-      <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button>
-      <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
-      <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
-      <button @click="checkout">Checkout</button>
-      <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p>
+      <div class="cart-checkout">
+        <h2>Cart total : </h2>
+        <p>{{ total | currency}}</p>
+        <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button>
+        <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
+        <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
+        <button @click="checkout">Checkout</button>
+        <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -53,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .empty-cart {
   position: absolute;
   top: 45%;
@@ -63,5 +70,56 @@ export default {
 
 .empty-cart p {
   margin-bottom: 30px;
+}
+
+.shopping-cart-items {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  flex: 2;
+  padding-left: 0;
+  justify-content: center;
+}
+
+.cart-checkout {
+  flex: 1;
+  justify-content: center;
+}
+
+.cart-product-card {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+.product-price {
+  margin-bottom: 5px;
+}
+
+img {
+  width: 180px;
+  height: 240px;
+}
+
+@media(max-width: 600px) {
+  .shopping-cart-items {
+    flex-direction: column;
+  }
+
+  .cart-product-card {
+    margin-right: 0px;
+  }
+  ul {
+    justify-content: space-around;
+  }
+
+  img {
+    width: auto;
+  }
 }
 </style>

@@ -37,8 +37,6 @@ nav {
   box-shadow: 1px 0rem 14px 0px #eee;
   width: 100%;
   padding: 24px;
-  /* display: flex;
-  justify-content: center; */
 }
 
 nav > a {
@@ -47,6 +45,17 @@ nav > a {
   font-weight: bold;
   text-decoration: none;
   margin-right: 50px;
+  letter-spacing: 0.5px;
+}
+
+@media(max-width: 600px) {
+  nav {
+    padding: 20px;
+  }
+
+  nav > a {
+    margin-right: 20px;
+  }
 }
 
 .nav-link {

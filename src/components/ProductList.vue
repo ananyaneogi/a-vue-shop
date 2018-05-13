@@ -5,7 +5,7 @@
       <li v-for="product in products" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]">
         <span class="sale-banner" v-if="product.sale">Sale</span>
         <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
-        <img :src="`/static/images/${product.img}`" :alt="`Image of ${product.title}`">
+        <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
         <span class="product-title">{{product.title}}</span>
         <span class="product-price"> {{product.price | currency}}</span>
         <button @click="addProductToCart(product)" class="add-to-cart-btn">Add to cart</button>
@@ -94,6 +94,12 @@ export default {
    opacity: 0;
  }
 
+ @media (max-width: 600px) {
+   .add-to-cart-btn {
+     opacity: 1;
+   }
+ }
+
  .product-card:hover {
    box-shadow: 1px 0rem 14px 0px #eee;
  }
@@ -105,6 +111,9 @@ export default {
  .product-title {
    margin-top: 10px;
    margin-bottom: 5px;
+ }
+ .product-price {
+   font-weight: bold;
  }
 
  .product-card.out-of-stock {

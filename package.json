@@ -4,10 +4,12 @@
   "description": "A Vue.js project",
   "author": "Ananya Neogi <ananyaneogi11@gmail.com>",
   "private": true,
+  "homepage": "https://github.com/ananyaneogi/a-vue-shop",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "vue": "^2.5.2",

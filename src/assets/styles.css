@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 body,
 html {
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -10,18 +11,17 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Georgia', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #app {
-  font-family: 'Georgia', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #131313;
 }
 
-/* Reset `button` and button-style `input` default styles */
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -148,16 +148,34 @@ input:-moz-placeholder {
 }
 
 .product-card img {
+  width: 100%;
   max-height: 280px;
 }
 
-/* no grid support */
-
-@supports (display: grid) {
-  .capsule > * {
-    width: auto;
-    margin: 0;
+@media(max-width: 600px) {
+  .content-wrapper {
+    padding: 0 10px;
   }
+  .product-list ul {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .sidebar-wrap {
+  padding-right: 0;
+  border-right: 0;
+  margin-bottom: 40px;
+  }
+  .product-list-wrap {
+    padding-left: 0px;
+  }
+
+  .product-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
 }
 
 /* --- range --- */
@@ -260,35 +278,4 @@ input[type='range'].slider:focus::-ms-fill-lower {
 
 input[type='range'].slider:focus::-ms-fill-upper {
   background: #5576ed;
-}
-
-/* ---- media queries ---- */
-
-/* check out how little code this is I love you gridddddddddddd ❤️ */
-
-@media (max-width: 600px) {
-  aside {
-    width: 100% !important;
-    margin-bottom: 10px !important;
-  }
-
-  .content {
-    width: 100% !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  nav li {
-    padding: 0 10px !important;
-  }
-
-  nav .capsule {
-    -ms-flex-pack: distribute !important;
-        justify-content: space-around !important;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  .content {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
 }
