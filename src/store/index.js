@@ -12,7 +12,7 @@ export default new Vuex.Store({
     cart:[],
     cartItems:0,
     checkoutStatus: null,
-    highprice: 1000,
+    highprice: 1500,
     sale: false
   },
   getters,

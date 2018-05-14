@@ -5,7 +5,7 @@
     </div>
     <div class="product-list-wrap">
       <h1>Products</h1>
-      <ProductList/>
+      <ProductList category="all"/>
       <!-- <router-link to="/cart" exact>Go to Cart</router-link> -->
     </div>
   </div>
@@ -25,9 +25,4 @@ export default {
 </script>
 
 <style lang="css">
- h1 {
-  text-align: left;
-  margin-bottom: 40px;
-  font-size: 20px;
- }
 </style>

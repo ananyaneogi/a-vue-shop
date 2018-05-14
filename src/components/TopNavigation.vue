@@ -5,7 +5,6 @@
       </router-link>
       <router-link to="/furniture">Furniture</router-link>
       <router-link to="/decor">Decor</router-link>
-      <router-link to="/sale">Sale</router-link>
       <div class="nav-link">
         <router-link to="/cart" exact>
         <div class="cart-link">
@@ -44,6 +43,9 @@ nav {
   box-shadow: 1px 0rem 14px 0px #eee;
   width: 100%;
   padding: 24px;
+  position: fixed;
+  height: 66px;
+  background-color: #fff;
 }
 
 nav > a {
@@ -53,6 +55,14 @@ nav > a {
   text-decoration: none;
   margin-right: 50px;
   letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav a.router-link-active {
+  color: #5044ff;
 }
 
 .logo {

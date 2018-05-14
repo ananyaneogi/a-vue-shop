@@ -16,7 +16,7 @@
         </li>
       </ul>
       <div class="cart-checkout">
-        <h2>Cart total : </h2>
+        <h3>Cart total : </h3>
         <p>{{ total | currency}}</p>
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button>
         <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
@@ -89,6 +89,12 @@ ul {
 .cart-checkout {
   flex: 1;
   justify-content: center;
+}
+
+.cart-checkout p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .cart-product-card {

@@ -101,13 +101,20 @@ input:-moz-placeholder {
   color: #aab8c3;
 }
 
+h1 {
+ text-align: left;
+ margin-bottom: 40px;
+ font-size: 20px;
+}
 /* ---- items layout ---- */
 
 .content-wrapper {
   padding: 60px 0px;
-  min-height: 83vh;
+  min-height: 98vh;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  top: 40px;
 }
 
 .product-page {

@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <div class="sidearea">
+    <div class="aside-block">
       <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input
         class="slider"
@@ -16,10 +16,15 @@
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
     </div>
-    <div class="sidearea callout">
-      <input type="checkbox" v-model="check" @change="updateSale">Show only sale item
+    <div class="aside-block">
+        <h4>Super Sale</h4>
+        <label class="checkbox-control">
+        <span class="label-name">Show only sale item</span>
+        <input type="checkbox" v-model="check" @change="updateSale">
+        <div class="checkbox-box"></div>
+      </label>
     </div>
-    <div class="sidearea callout">
+    <div class="aside-block">
       <h4>Support</h4>
       <p>Get in touch with us for any queries at <a href="#">support@bazaaar.in</a></p>
     </div>
@@ -58,9 +63,10 @@ export default {
 </script>
 
 <style lang="css">
-  .sidearea {
+  .aside-block {
     padding: 40px 0;
     border-bottom: 1px solid #eee;
+    font-size: 15px;
   }
   .min {
     float: left;
@@ -68,4 +74,40 @@ export default {
   .max {
     float: right;
   }
+
+  .aside-block h4 {
+    margin-bottom: 10px;
+  }
+  .checkbox-control {
+    position: relative;
+  }
+  .checkbox-box {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #131313;
+    position: relative;
+    cursor: pointer;
+    float: left;
+    top: 2px;
+    left: 32px;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+  }
+
+  input[type="checkbox"]:hover ~ .checkbox-box, input[type="checkbox"]:focus ~ .checkbox-box, input[type="checkbox"]:checked ~ .checkbox-box{
+    border-color: #5044ff;
+  }
+
+  input[type="checkbox"]:checked ~ .checkbox-box::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    left: 2px;
+    background: #5044ff;
+  }
+
 </style>
