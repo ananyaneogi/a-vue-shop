@@ -46,6 +46,7 @@ nav {
   position: fixed;
   height: 66px;
   background-color: #fff;
+  z-index: 99;
 }
 
 nav > a {
