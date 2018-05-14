@@ -1,6 +1,6 @@
 <template>
   <footer>
-  Created by <a href="http://www.ananayneogi.com">Ananya</a> with lots of 🎧 . This is open source, <a href="#">visit the repo.</a>
+  Created by <a href="http://www.ananayneogi.com">Ananya</a> with lots of 🎧 . This is open source, <a href="https://github.com/ananyaneogi/a-vue-shop">visit the repo.</a>
 </footer>
 </template>
 
@@ -14,6 +14,6 @@ footer {
   text-align: center;
   font-size: 16px;
   padding: 20px;
-  background: #fbfbfb;
+  background: #eee;
 }
 </style>

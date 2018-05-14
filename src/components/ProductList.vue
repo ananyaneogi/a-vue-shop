@@ -2,7 +2,7 @@
   <div class="product-list">
     <p v-if="loading">Loading....</p>
     <ul v-else>
-      <li v-for="product in products" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]">
+      <li v-for="product in products" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0">
         <span class="sale-banner" v-if="product.sale">Sale</span>
         <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
         <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
@@ -22,14 +22,22 @@ export default {
   data() {
     return {
       // products: []
-      loading: false
+      loading: false,
+      highprice: 100
     };
   },
 
   computed : {
-    ...mapState({
-      products: state => state.products
-    }),
+    // ...mapState({
+    //   products: state => state.products
+    // }),
+    products() {
+      return this.$store.state.products.filter(el =>
+        this.$store.state.sale
+          ? el.price < this.$store.state.highprice && el.sale
+          : el.price < this.$store.state.highprice
+      )
+    },
     ...mapGetters({
       productInStock: 'productInStock'
     })
@@ -100,11 +108,21 @@ export default {
    }
  }
 
- .product-card:hover {
+ .product-card:hover, .product-card:focus  {
    box-shadow: 1px 0rem 14px 0px #eee;
+   outline: none;
  }
 
  .product-card:hover .add-to-cart-btn{
+   opacity: 1;
+ }
+
+/* For keyboard controls */
+ .product-card:focus .add-to-cart-btn {
+   opacity: 1;
+ }
+
+ .add-to-cart-btn:focus {
    opacity: 1;
  }
 
@@ -119,10 +137,15 @@ export default {
  .product-card.out-of-stock {
    pointer-events: none;
  }
+ .product-card.out-of-stock button {
+   display: none;
+ }
+
  .product-card.out-of-stock img {
    opacity: 0.6;
  }
  .product-card.out-of-stock .product-price,  .product-card.out-of-stock .product-title{
    opacity: 0.6;
  }
+
 </style>

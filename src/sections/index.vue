@@ -1,7 +1,7 @@
 <template>
   <div class="product-page">
     <div class="sidebar-wrap">
-      <Sidebar :pricerange.sync="highprice"/>
+      <Sidebar/>
     </div>
     <div class="product-list-wrap">
       <h1>Products</h1>
@@ -20,12 +20,7 @@ export default {
   components: {
     ProductList,
     Sidebar
-  },
-  data() {
-    return {
-      highprice: 300
-    };
-  },
+  }
 }
 </script>
 

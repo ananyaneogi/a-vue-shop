@@ -60,11 +60,12 @@ button {
   transition: 0.15s all ease-out;
 }
 
-button:hover {
+button:hover, button:focus {
   background: #5044ff;
   color: white;
   -webkit-transition: 0.2s all ease-in;
   transition: 0.2s all ease-in;
+  outline: none;
 }
 
 *,

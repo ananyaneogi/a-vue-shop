@@ -1,5 +1,8 @@
 <template>
     <nav>
+      <router-link to="/" exact>
+        <div class="logo"><logo></logo></div>
+      </router-link>
       <router-link to="/furniture">Furniture</router-link>
       <router-link to="/decor">Decor</router-link>
       <router-link to="/sale">Sale</router-link>
@@ -21,9 +24,13 @@
 
 <script>
 import index from '@/store/index'
+import logo from '@/assets/logo'
 
 export default {
   name:'TopNavigation',
+  components: {
+    logo
+  },
   computed: {
     noItems() {
       return this.$store.state.cartItems
@@ -46,6 +53,17 @@ nav > a {
   text-decoration: none;
   margin-right: 50px;
   letter-spacing: 0.5px;
+}
+
+.logo {
+  float: left;
+  position: relative;
+  top: -7px;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
 }
 
 @media(max-width: 600px) {

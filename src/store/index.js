@@ -11,9 +11,10 @@ export default new Vuex.Store({
     products:[],
     cart:[],
     cartItems:0,
-    checkoutStatus: null
+    checkoutStatus: null,
+    highprice: 1000,
+    sale: false
   },
-
   getters,
   actions,
   mutations

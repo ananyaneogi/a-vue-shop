@@ -1,51 +1,59 @@
 <template>
   <aside>
     <div class="sidearea">
-      <label for="pricerange">Highest Price: <span>${{ pricerange }}</span></label>
+      <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input
         class="slider"
         id="pricerange"
-        type="range"
+        tabindex="0"
         :value="pricerange"
+        type="range"
         :min="min"
         :max="max"
         step="0.1"
-        @input="$emit('update:pricerange', $event.target.value)"
+        @input="updateHighPrice($event)"
       />
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
     </div>
-    <!-- <app-switch v-if="!sale" /> -->
     <div class="sidearea callout">
-      <h4>Special Sale!</h4>
-      <p>Bla bla bla</p>
+      <input type="checkbox" v-model="check" @change="updateSale">Show only sale item
     </div>
     <div class="sidearea callout">
-      <h4>Contact Us</h4>
-      <p>Bla bla bla</p>
+      <h4>Support</h4>
+      <p>Get in touch with us for any queries at <a href="#">support@bazaaar.in</a></p>
     </div>
   </aside>
 </template>
 
 <script>
+import store from '@/store/index'
 export default {
   name: 'Sidebar',
-  props: {
-    // sale: {
-    //   type: Boolean,
-    //   default: false
-    // },
-    pricerange: {
-      type: [Number, String],
-      default: 1000
-    }
-  },
   data() {
     return {
       min: 0,
-      max: 2000
+      max: 2000,
+      check: this.checked
     };
   },
+  computed: {
+    pricerange() {
+      return this.$store.state.highprice
+    },
+    checked() {
+      return this.$store.state.sale;
+    }
+  },
+  methods: {
+    updateHighPrice($event) {
+      this.$store.commit('setHighPrice', $event.target.value)
+    },
+    updateSale() {
+      this.$store.commit('toggleSale');
+    }
+  }
+
 }
 </script>
 

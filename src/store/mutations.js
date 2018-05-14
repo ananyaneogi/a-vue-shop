@@ -25,5 +25,11 @@ export default { // setting and updating the state
   emptyCart(state) {
     state.cart = []
     state.cartItems = 0
+  },
+  setHighPrice(state, event) {
+    state.highprice = event
+  },
+  toggleSale(state) {
+    state.sale = !state.sale
   }
 }
