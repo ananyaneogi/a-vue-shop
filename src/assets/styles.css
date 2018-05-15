@@ -211,6 +211,7 @@ h1 {
 @media(max-width: 640px) {
   .content-wrapper {
     padding: 0 10px;
+    margin-bottom: 50px;
   }
   .product-list ul {
     grid-template-columns: repeat(2,1fr);
