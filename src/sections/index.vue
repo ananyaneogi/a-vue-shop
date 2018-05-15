@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade" tag="div">
   <div class="product-page">
     <div class="sidebar-wrap">
       <Sidebar/>
@@ -9,6 +10,7 @@
       <!-- <router-link to="/cart" exact>Go to Cart</router-link> -->
     </div>
   </div>
+</transition>
 </template>
 
 <script>

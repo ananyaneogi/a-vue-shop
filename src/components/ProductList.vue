@@ -1,16 +1,16 @@
 <template>
   <div class="product-list">
     <p v-if="loading">Loading....</p>
-    <ul v-else>
-        <li v-for="product in products" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'all'">
+      <transition-group name="card" tag="ul" v-else>
+        <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'all'">
           <span class="sale-banner" v-if="product.sale">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
-          <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
+          <img :src="`./static/images/${product.img}`" :alt="`image of ${product.title}`">
           <span class="product-title">{{product.title}}</span>
           <span class="product-price"> {{product.price | currency}}</span>
           <button @click="addProductToCart(product)" class="add-to-cart-btn">Add to cart</button>
         </li>
-    </ul>
+      </transition-group>
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade" tag="div">
   <div class="product-page">
     <div class="sidebar-wrap">
       <Sidebar/>
@@ -8,6 +9,7 @@
       <ProductList category="furniture"/>
     </div>
   </div>
+</transition>
 </template>
 
 <script>

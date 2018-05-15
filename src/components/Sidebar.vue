@@ -24,10 +24,10 @@
         <div class="checkbox-box"></div>
       </label>
     </div>
-    <div class="aside-block">
+    <!-- <div class="aside-block">
       <h4>Support</h4>
       <p>Get in touch with us for any queries at <a href="#">support@bazaaar.in</a></p>
-    </div>
+    </div> -->
   </aside>
 </template>
 
@@ -80,6 +80,7 @@ export default {
   }
   .checkbox-control {
     position: relative;
+    display: inline-block;
   }
   .checkbox-box {
     width: 18px;
@@ -89,11 +90,12 @@ export default {
     cursor: pointer;
     float: left;
     top: 2px;
-    left: 32px;
+    margin-right: 10px;
   }
 
   input[type="checkbox"] {
     opacity: 0;
+    position: absolute;
   }
 
   input[type="checkbox"]:hover ~ .checkbox-box, input[type="checkbox"]:focus ~ .checkbox-box, input[type="checkbox"]:checked ~ .checkbox-box{

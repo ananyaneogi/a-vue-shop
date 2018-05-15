@@ -4,7 +4,6 @@ import index from '@/sections/index'
 import cart from '@/sections/cart'
 import furniture from '@/sections/furniture'
 import decor from '@/sections/decor'
-import sale from '@/sections/sale'
 
 
 Vue.use(Router)
@@ -30,11 +29,6 @@ export default new Router({
       path: '/decor',
       name: 'decor',
       component: decor
-    },
-    {
-      path: '/sale',
-      name: 'sale',
-      component: sale
-    },
+    }
   ]
 })
