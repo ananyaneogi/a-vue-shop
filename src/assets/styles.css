@@ -391,3 +391,7 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .fade-leave-to {
   opacity: 0;
 }
+
+.pointer {
+  cursor: pointer;
+}

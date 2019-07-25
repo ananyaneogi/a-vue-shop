@@ -18,11 +18,11 @@
     </div>
     <div class="aside-block">
         <h4>Super Sale</h4>
-        <label class="checkbox-control">
-        <span class="label-name">Show only sale item</span>
-        <input type="checkbox" v-model="check" @change="updateSale">
-        <div class="checkbox-box"></div>
-      </label>
+        <label class="checkbox-control pointer">
+          <span class="label-name">Show only sale item</span>
+          <input type="checkbox" v-model="check" @change="updateSale">
+          <div class="checkbox-box"></div>
+        </label>
     </div>
     <!-- <div class="aside-block">
       <h4>Support</h4>
