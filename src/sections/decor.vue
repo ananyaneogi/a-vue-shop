@@ -1,34 +1,22 @@
 <template>
-  <transition name="fade" tag="div">
-  <div class="product-page">
-    <div class="sidebar-wrap">
-      <Sidebar/>
-    </div>
-    <div class="product-list-wrap">
-      <h1>Furniture</h1>
-      <ProductList category="decor"/>
-    </div>
-  </div>
-</transition>
+  <section class="decoration">
+    <h1>Decor</h1>
+    <ProductList category="decor"/>
+  </section>
 </template>
 
 <script>
 import ProductList from '@/components/ProductList'
-import Sidebar from '@/components/Sidebar'
+import SideMainLayout from '@/layout/SideMainLayout'
 
 export default {
   name: 'index',
   components: {
     ProductList,
-    Sidebar
+    SideMainLayout
   }
 }
 </script>
 
 <style lang="css">
- h1 {
-  text-align: left;
-  margin-bottom: 40px;
-  font-size: 20px;
- }
 </style>
