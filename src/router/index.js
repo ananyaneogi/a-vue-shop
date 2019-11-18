@@ -10,32 +10,31 @@ import SideMainLayout from '@/layout/SideMainLayout'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: SideMainLayout,
-      children: [
-        {
-          path: '/',
-          component: index
+    mode: 'history',
+    routes: [{
+            path: '/',
+            name: 'index',
+            component: SideMainLayout,
+            children: [{
+                    path: '/',
+                    component: index
+                },
+                {
+                    path: '/furniture',
+                    name: 'furniture',
+                    component: furniture
+                },
+                {
+                    path: '/decor',
+                    name: 'decor',
+                    component: decor
+                }
+            ]
         },
         {
-          path: '/furniture',
-          name: 'furniture',
-          component: furniture
-        },
-        {
-          path: '/decor',
-          name: 'decor',
-          component: decor
+            path: '/cart',
+            name: 'cart',
+            component: cart
         }
-      ]
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: cart
-    }
-  ]
+    ]
 })
