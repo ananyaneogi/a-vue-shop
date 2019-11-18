@@ -5,6 +5,7 @@ import cart from '@/sections/cart'
 import furniture from '@/sections/furniture'
 import decor from '@/sections/decor'
 import SideMainLayout from '@/layout/SideMainLayout'
+import Home from '@/sections/home'
 
 
 Vue.use(Router)
@@ -17,6 +18,10 @@ export default new Router({
             component: SideMainLayout,
             children: [{
                     path: '/',
+                    component: Home
+                },
+                {
+                    path: '/shop',
                     component: index
                 },
                 {
