@@ -1,6 +1,7 @@
 <template>
   <section class="home-page">
     <h1>HomePage</h1>
+    <button @click="$router.push('shop')">Shop</button>
   </section>
 </template>
 
