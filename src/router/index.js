@@ -13,14 +13,10 @@ Vue.use(Router)
 export default new Router({
     mode: 'history',
     routes: [{
-            path: '/',
+            path: '/shop',
             name: 'index',
             component: SideMainLayout,
             children: [{
-                    path: '/',
-                    component: Home
-                },
-                {
                     path: '/shop',
                     component: index
                 },
@@ -35,6 +31,11 @@ export default new Router({
                     component: decor
                 }
             ]
+        },
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
         },
         {
             path: '/cart',
