@@ -1,13 +1,15 @@
 <template>
-  <section class="home-page">
-    <div class="circle">
-      <span class="title">A VUE SHOP</span
-      ><button class="button" @click="$router.push('shop')">Shop</button>
+  <div class="wrapper">
+    <div class="home-page">
+      <div class="circle">
+        <span class="title">A VUE SHOP</span
+        ><button class="button" @click="$router.push('shop')">Shop</button>
+      </div>
+      <div class="text">
+        Life is hard enough already. Let us make it a little easier.
+      </div>
     </div>
-    <div class="text">
-      Life is hard enough already. Let us make it a little easier.
-    </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -18,6 +20,9 @@ export default {
 </script>
 
 <style lang="css">
+.wrapper {
+  display: flex;
+}
 .home-page {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9zYLbP5lDBSylTkAjG7Csu85EzUIyLArvww4cJ9v-ASWfqw9c&s);
   background-repeat: no-repeat;
@@ -25,7 +30,11 @@ export default {
   background-size: 100% 100%;
   background-blend-mode: lighten;
   background-color: rgba(255, 255, 255, 0.3);
-  height: 800px;
+  height: 1000px;
+  /* width: 100%; */
+  padding: 0px;
+  margin: -50px -279px;
+  flex-grow: 5;
 }
 .circle {
   width: 300px;
