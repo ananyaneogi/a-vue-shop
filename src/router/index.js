@@ -5,37 +5,42 @@ import cart from '@/sections/cart'
 import furniture from '@/sections/furniture'
 import decor from '@/sections/decor'
 import SideMainLayout from '@/layout/SideMainLayout'
+import Home from '@/sections/home'
 
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: SideMainLayout,
-      children: [
-        {
-          path: '/',
-          component: index
+    mode: 'history',
+    routes: [{
+            path: '/shop',
+            name: 'index',
+            component: SideMainLayout,
+            children: [{
+                    path: '/shop',
+                    component: index
+                },
+                {
+                    path: '/furniture',
+                    name: 'furniture',
+                    component: furniture
+                },
+                {
+                    path: '/decor',
+                    name: 'decor',
+                    component: decor
+                }
+            ]
         },
         {
-          path: '/furniture',
-          name: 'furniture',
-          component: furniture
+            path: '/',
+            name: 'Home',
+            component: Home
         },
         {
-          path: '/decor',
-          name: 'decor',
-          component: decor
+            path: '/cart',
+            name: 'cart',
+            component: cart
         }
-      ]
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: cart
-    }
-  ]
+    ]
 })
